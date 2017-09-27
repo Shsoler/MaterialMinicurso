@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/spritesheet.png" type="Texture" id=2]
@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 35.892, 35.5297 )
+extents = Vector2( 15, 35.5297 )
 
 [sub_resource type="Animation" id=2]
 
@@ -64,17 +64,49 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
+[sub_resource type="Animation" id=8]
+
+resource/name = "teste"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 20, 5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25, 30 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2635, 10 )
+
 [node name="Mundo" type="Node"]
 
 [node name="Jogador" type="KinematicBody2D" parent="."]
 
-transform/pos = Vector2( 483.856, 135.661 )
+transform/pos = Vector2( 585, 150 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 3.68323 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 6.14401, 4.339 )
 shapes/0/trigger = false
 collision/layers = 1
-collision/mask = 7
+collision/mask = 1031
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 
@@ -88,7 +120,7 @@ region_rect = Rect2( 50, 0, 50, 50 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador"]
 
-transform/pos = Vector2( 0, 3.68323 )
+transform/pos = Vector2( 6.14401, 4.339 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -121,29 +153,50 @@ root/root = NodePath("..")
 anims/Idle = SubResource( 2 )
 anims/andando = SubResource( 3 )
 anims/pulando = SubResource( 4 )
+anims/teste = SubResource( 8 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Label" type="Label" parent="Jogador"]
+[node name="Pe" type="Area2D" parent="Jogador"]
 
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -203.856
-margin/top = -125.661
-margin/right = -147.856
-margin/bottom = -111.661
-text = "Inimigos"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+input/pickable = true
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.14401, 39.339 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador/Pe"]
+
+transform/pos = Vector2( 1.14401, 39.339 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Area2D" type="Area2D" parent="Jogador"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 6.14401, -0.660995 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador/Area2D"]
+
+transform/pos = Vector2( 6.14401, -0.660995 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -180,8 +233,11 @@ motion/mirroring = Vector2( 1000, 0 )
 transform/pos = Vector2( 473.836, 302.721 )
 texture = ExtResource( 4 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Chao" type="Node" parent="."]
 
+[node name="TileMap" type="TileMap" parent="Chao"]
+
+transform/pos = Vector2( 10, -80 )
 mode = 0
 tile_set = ExtResource( 5 )
 cell/size = Vector2( 64, 64 )
@@ -200,15 +256,13 @@ tile_data = IntArray( -262154, 1, -262153, 1, -262152, 1, -262151, 1, -262150, 1
 
 [node name="Moeda" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="Area2D" parent="Moeda" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 2570, 440 )
 
 [node name="AnimatedSprite" parent="Moeda/Area2D"]
 
-frame = 3
+frame = 0
 
 [node name="Area2D1" parent="Moeda" instance=ExtResource( 6 )]
 
@@ -220,8 +274,6 @@ transform/pos = Vector2( 950, 505 )
 
 [node name="Inimigo" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="Inimigo" parent="Inimigo" groups=[
 "Inimigo",
 ] instance=ExtResource( 7 )]
@@ -232,5 +284,85 @@ editor/display_folded = true
 
 transform/pos = Vector2( 2950, 395 )
 
+[node name="Abismo" type="Area2D" parent="."]
+
+transform/pos = Vector2( 10, 95 )
+input/pickable = true
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1705, 975 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Abismo"]
+
+transform/pos = Vector2( 1705, 975 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+
+anchor/left = 3
+rect/scale = Vector2( 3, 1 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -353.073
+margin/top = 29.5744
+margin/right = 905.073
+margin/bottom = 69.5744
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+
+rect/scale = Vector2( 0.4, 1 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 2.0
+margin/top = 10.0
+margin/right = 42.0
+margin/bottom = 24.0
+text = "Vidas"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label 2" type="Label" parent="CanvasLayer/Panel"]
+
+rect/scale = Vector2( 0.5, 1.3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 20.0
+margin/top = 5.0
+margin/right = 60.0
+margin/bottom = 19.0
+text = "3"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="body_enter" from="Jogador/Pe" to="Jogador" method="_on_Pe_body_enter"]
+
+[connection signal="body_enter" from="Jogador/Area2D" to="Jogador" method="_on_Area2D_body_enter"]
+
+[connection signal="body_enter" from="Abismo" to="Jogador" method="_on_Abismo_body_enter"]
+
 
 [editable path="Moeda/Area2D"]
+[editable path="Inimigo/Inimigo"]
