@@ -12,7 +12,7 @@ var contaPulo = 0
 var movimento = Vector2()
 var idle = true
 var andando = true
-
+var inimigosMortos = 0
 func _input(event):
 	if event.is_action_pressed("ui_up") and contaPulo < MAX_PULO:
 		movimento.y = -ALTURA_PULO
@@ -44,6 +44,11 @@ func _fixed_process(delta):
 	#calcula normal e implementa deslize
 
 	if is_colliding():
+		if get_collider().is_in_group("Inimigo"):
+			inimigosMortos += 1
+			get_node("Label").set_text("Inimigo ="+str(inimigosMortos))
+			get_collider().queue_free()
+			movimento.y = -ALTURA_PULO
 		if andando and input:
 			get_node("AnimationPlayer").play("andando")
 			andando = false

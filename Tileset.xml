@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="TileSet" subresource_count="35" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
-	<ext_resource path="res://Sprites/Tile/17.png" type="Texture" index="8"></ext_resource>
 	<ext_resource path="res://Sprites/Tile/3.png" type="Texture" index="10"></ext_resource>
 	<ext_resource path="res://Sprites/Tile/13.png" type="Texture" index="5"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/14.png" type="Texture" index="6"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/16.png" type="Texture" index="4"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/4.png" type="Texture" index="11"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/6.png" type="Texture" index="13"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/1.png" type="Texture" index="0"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/15.png" type="Texture" index="7"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/10.png" type="Texture" index="17"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/12.png" type="Texture" index="3"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/11.png" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/2.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/5.png" type="Texture" index="12"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/7.png" type="Texture" index="14"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/18.png" type="Texture" index="9"></ext_resource>
-	<ext_resource path="res://Sprites/Tile/9.png" type="Texture" index="16"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/17.png" type="Texture" index="8"></ext_resource>
 	<ext_resource path="res://Sprites/Tile/8.png" type="Texture" index="15"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/11.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/6.png" type="Texture" index="13"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/9.png" type="Texture" index="16"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/15.png" type="Texture" index="7"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/12.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/16.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/10.png" type="Texture" index="17"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/7.png" type="Texture" index="14"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/5.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/2.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/4.png" type="Texture" index="11"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/14.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/18.png" type="Texture" index="9"></ext_resource>
+	<ext_resource path="res://Sprites/Tile/1.png" type="Texture" index="0"></ext_resource>
 	<resource type="ConvexPolygonShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="5"> 			-54, -65, 66, -65, 66, 65, -64, 65, -64, -65 </vector2_array>
@@ -45,17 +45,17 @@
 	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://14">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="6"> 			-60, -50, 60, -50, 60, 50, 10, 30, -50, 0, -60, -10 </vector2_array>
+		<vector2_array name="points" len="6"> 			-60.3678, -50.325, 64.0097, -49.6654, 60, 50, 10, 30, -50, 0, -64.3586, -29.2186 </vector2_array>
 
 	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://15">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-70, -50, 70, -50, 70, 40, -60, 40 </vector2_array>
+		<vector2_array name="points" len="4"> 			-64.6541, -50.6649, 59.4055, -50.0015, 62.0592, 42.2139, -60, 40 </vector2_array>
 
 	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://16">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="6"> 			-60, -40, 60, -40, 60, -10, 0, 30, -40, 40, -60, 40 </vector2_array>
+		<vector2_array name="points" len="6"> 			-64.2969, -45.0014, 59.7628, -45.0014, 61.0896, -16.4744, -0.984009, 32.9553, -40.7892, 46.8871, -60, 42 </vector2_array>
 
 	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://3">
@@ -286,9 +286,9 @@
 		<vector2 name="14/tex_offset"> 0, 0 </vector2>
 		<resource name="14/material"></resource>		<color name="14/modulate"> 1, 1, 1, 1 </color>
 		<rect2 name="14/region"> 0, 0, 128, 93 </rect2>
-		<vector2 name="14/occluder_offset"> 64, 46.5 </vector2>
-		<resource name="14/occluder"></resource>		<vector2 name="14/navigation_offset"> 64, 46.5 </vector2>
-		<resource name="14/navigation"></resource>		<vector2 name="14/shape_offset"> 64, 46.5 </vector2>
+		<vector2 name="14/occluder_offset"> 64, 45.5 </vector2>
+		<resource name="14/occluder"></resource>		<vector2 name="14/navigation_offset"> 64, 45.5 </vector2>
+		<resource name="14/navigation"></resource>		<vector2 name="14/shape_offset"> 64, 45.5 </vector2>
 		<array name="14/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://15">  </resource>
 		</array>
@@ -299,9 +299,9 @@
 		<vector2 name="15/tex_offset"> 0, 0 </vector2>
 		<resource name="15/material"></resource>		<color name="15/modulate"> 1, 1, 1, 1 </color>
 		<rect2 name="15/region"> 0, 0, 128, 93 </rect2>
-		<vector2 name="15/occluder_offset"> 64, 46.5 </vector2>
-		<resource name="15/occluder"></resource>		<vector2 name="15/navigation_offset"> 64, 46.5 </vector2>
-		<resource name="15/navigation"></resource>		<vector2 name="15/shape_offset"> 64, 46.5 </vector2>
+		<vector2 name="15/occluder_offset"> 64, 45.8365 </vector2>
+		<resource name="15/occluder"></resource>		<vector2 name="15/navigation_offset"> 64, 45.8365 </vector2>
+		<resource name="15/navigation"></resource>		<vector2 name="15/shape_offset"> 64, 45.8365 </vector2>
 		<array name="15/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://16">  </resource>
 		</array>
